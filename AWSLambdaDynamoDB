@@ -1,0 +1,15 @@
+import json 
+import boto3 
+dynamodb = boto3.resource('dynamodb')
+table = dynamodb.Table('myTable')
+def lambda_handler(event, context):
+  response = table.get_item(
+    key={
+      'id':'bar'
+    }
+  }
+  print(response)
+  return { 
+    'statusCode': 200, 
+    'body': response 
+  }
