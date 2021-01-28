@@ -3,3 +3,4 @@ for key in ~/.ssh/id_*; do ssh-keygen -l -f "${key}"; done | uniq
 mkdir -p ca/{root-ca,sub-ca}/{certs,db,private}; chmod -v 700 ca/{root-ca,sub-ca}/private
 for ip in $(<ips); do ping -c1 $ip; done
 python -c "import os; exists = os.path.isfile('myFile.txt'); print(int(exists))"
+[ -e "/myfile" ] && echo 1 || echo 0
