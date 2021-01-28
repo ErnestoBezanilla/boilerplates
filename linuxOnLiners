@@ -1,2 +1,0 @@
-for key in ~/.ssh/id_*; do ssh-keygen -l -f "${key}"; done | uniq
-./lsof /var/lib/docker 2>&1 | grep deleted | awk '{print $9}' | sort -kln | uniq -c
