@@ -2,6 +2,7 @@ for key in ~/.ssh/id_*; do ssh-keygen -l -f "${key}"; done | uniq
 ./lsof /var/lib/docker 2>&1 | grep deleted | awk '{print $9}' | sort -kln | uniq -c
 mkdir -p ca/{root-ca,sub-ca}/{certs,db,private}; chmod -v 700 ca/{root-ca,sub-ca}/private
 for ip in $(<ips); do ping -c1 $ip; done
+ls /home/source | tail -1000 | xargs mv -t /home/dest
 python -c "import os; exists = os.path.isfile('myFile.txt'); print(int(exists))"
 [ -e "/myfile" ] && echo 1 || echo 0
 python -c "print([line.strip() for line in open("xxx.txt")])"
